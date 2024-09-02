@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=SUSE:wght@100..800&display=swap');:root {
-    --accent-color: #ea631b;
+    --accent-color: #692f0379;
     --base-color: #fff9e883;
-    --text-color: #d74e05;
-    --input-color: #fef2e5;
+    --text-color: #565f0e;
+    --input-color: #fef2e52a;
 }
 
 * {
@@ -22,6 +22,7 @@ body {
     background-size: cover;
     background-position: right;
     overflow: hidden;
+    backdrop-filter: blur(5px);
 }
 
 .wrapper {
@@ -46,7 +47,11 @@ h1 {
     font-size: 3em;
     font-weight: 900;
     text-transform: uppercase;
-    filter: drop-shadow(2px 2px 10px rgb(255, 255, 255));
+    text-shadow: 1px 1px 2px rgba(122, 122, 122, 0.826);
+}
+
+p {
+    color: #fff5dd;
 }
 
 form {
@@ -64,14 +69,14 @@ form {
         border: none;
         border-radius: 1000px;
         padding: .85em 4em;
-        background-color: var(--accent-color);
-        color: var(--input-color);
+        background-color: var(--text-color);
+        color:#fff5dd;
         font-family: "Poppins", sans-serif;
         font-weight: 600;
         text-transform: uppercase;
         cursor: pointer;
         &:hover {
-            background-color: var(--text-color);
+            background-color: var(--accent-color);
         }
         &:focus {
             outline: none;
@@ -86,7 +91,7 @@ form > div {
     filter: drop-shadow(2px 2px 5px rgb(137, 137, 137));
 }
 
-form label {
+label {
     flex-shrink: 0;
     height: 50px;
     width: 50px;
@@ -96,13 +101,13 @@ form label {
     align-items: center;
     justify-content: center;
     & svg {
-    fill: var(--input-color);
+    fill: #fff5dd;
     font-size: 1.5rem;
     font-weight: 500;
    }
 }
 
-form input {
+input {
     box-sizing: border-box;
     flex-grow: 1;
     min-width: 0;
@@ -132,7 +137,7 @@ div:has(input:focus) > label {
 
 a {
     text-decoration: none;
-    color: var(--accent-color);
+    color: var(--text-color);
     &:hover {
         text-decoration: underline;
     }
@@ -146,13 +151,13 @@ a {
 }
 
 .incorrect input {
-    border-color:rgb(152, 0, 0) !important;
+    border-color:rgb(98, 0, 0) !important;
 }
 .incorrect label  {
-    background-color:rgb(152, 0, 0) !important;
+    background-color:rgb(98, 0, 0) !important;
 }
 
 
 #error-message {
-    color: rgb(152, 0, 0);
+    color: rgb(172, 0, 0);
 }
