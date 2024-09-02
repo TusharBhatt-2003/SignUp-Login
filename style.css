@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=SUSE:wght@100..800&display=swap');:root {
+    --accent-color: #ea631b;
+    --base-color: #fff9e883;
+    --text-color: #d74e05;
+    --input-color: #fef2e5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: "SUSE", system-ui;
+    font-size: 12pt;
+    text-align: center;
+}
+
+body {
+    min-height: 100dvh;
+    background-image: url(https://images.pexels.com/photos/17454899/pexels-photo-17454899/free-photo-of-brothers.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
+    background-position: right;
+    overflow: hidden;
+}
+
+.wrapper {
+    color: var(--input-color);
+    box-sizing: border-box;
+    background-color: var(--base-color);
+    backdrop-filter: blur(20px);
+    height: 100vh;
+    width: max(50%, 600px);
+    padding: 10px;
+    border-radius: 0 50px 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(2px 2px 50px rgb(0, 0, 0));
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    color: var(--text-color);
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    filter: drop-shadow(2px 2px 10px rgb(255, 255, 255));
+}
+
+form {
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    & button{
+        filter: drop-shadow(2px 2px 7px rgb(82, 81, 81));
+        margin-top: 10px;
+        border: none;
+        border-radius: 1000px;
+        padding: .85em 4em;
+        background-color: var(--accent-color);
+        color: var(--input-color);
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover {
+            background-color: var(--text-color);
+        }
+        &:focus {
+            outline: none;
+            background-color: var(--text-color);
+        }
+    }
+}
+form > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(2px 2px 5px rgb(137, 137, 137));
+}
+
+form label {
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: var(--accent-color);
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & svg {
+    fill: var(--input-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+   }
+}
+
+form input {
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    border-radius: 0 10px 10px 0;
+    border: 1.5px solid var(--input-color);
+    border-left: none;
+    color: var(--text-color);
+    background-color: var(--input-color);
+    transition: 150ms ease;
+    &:hover {
+        border-color: var(--accent-color);
+    } &:focus {
+        outline: none;
+        border-color: var(--text-color);
+    } &::placeholder {
+        color: var(--text-color);
+        opacity: 0.5;
+    }
+}
+
+div:has(input:focus) > label {
+    background-color:  var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 60em) {
+    .wrapper {
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+}
+
+.incorrect input {
+    border-color:rgb(152, 0, 0) !important;
+}
+.incorrect label  {
+    background-color:rgb(152, 0, 0) !important;
+}
+
+
+#error-message {
+    color: rgb(152, 0, 0);
+}
